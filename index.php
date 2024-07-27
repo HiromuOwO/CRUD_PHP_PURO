@@ -62,12 +62,12 @@
                         ?>
                         <tr>
 
-                            <td><?php= $datos->id_persona ?></td>
-                            <td><?php= $datos->nombre?></td>
-                            <td><?php=$datos->Apellidos ?></td>
-                            <td><?php=$datos->DNI ?></td>
-                            <td><?php=$datos->fechaNacimiento?></td>
-                            <td><?php=$datos->coreo?></td>
+                            <td><?= $datos->id_persona ?></td>
+                            <td><?= $datos->nombre ?></td>
+                            <td><?= $datos->Apellidos ?></td>
+                            <td><?= $datos->DNI ?></td>
+                            <td><?= $datos->fechaNacimiento ?></td>
+                            <td><?= $datos->coreo ?></td>
                             <td>
                                 <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                                 <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
