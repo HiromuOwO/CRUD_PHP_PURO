@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/62178d318f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -40,7 +42,47 @@
 
         <div class="col 8 p-4">
 
-        
+            <table class="table table-dark table-striped-column">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">DNI</th>
+                        <th scope="col">Fecha de naciemiento</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    include "modelo/conexion.php";
+                    $sql = $conexion->query("select * from persona");
+                    while ($datos = $sql->fetch_object()) {
+                        ?>
+                        <tr>
+
+                            <td><?php= $datos->id_persona ?></td>
+                            <td><?php= $datos->nombre?></td>
+                            <td><?php=$datos->Apellidos ?></td>
+                            <td><?php=$datos->DNI ?></td>
+                            <td><?php=$datos->fechaNacimiento?></td>
+                            <td><?php=$datos->coreo?></td>
+                            <td>
+                                <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
+                                <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                    <?php }
+
+                    ?>
+
+
+
+                </tbody>
+            </table>
+
+
         </div>
     </div>
 </body>
