@@ -45,12 +45,12 @@
             <table class="table table-dark table-striped-column">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombres</th>
-                        <th scope="col">Apellidos</th>
-                        <th scope="col">DNI</th>
-                        <th scope="col">Fecha de naciemiento</th>
-                        <th scope="col">Correo</th>
+                        <th scope="col">IDLIBRO</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Editorial</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Numero de Paginas</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -62,12 +62,12 @@
                         ?>
                         <tr>
 
-                            <td><?= $datos->id_persona ?></td>
-                            <td><?= $datos->nombre ?></td>
-                            <td><?= $datos->Apellidos ?></td>
-                            <td><?= $datos->DNI ?></td>
-                            <td><?= $datos->fechaNacimiento ?></td>
-                            <td><?= $datos->coreo ?></td>
+                            <td><?= $datos->IDLIBRO ?></td>
+                            <td><?= $datos->titulo?></td>
+                            <td><?= $datos->autor ?></td>
+                            <td><?= $datos->editorial?></td>
+                            <td><?= $datos->año ?></td>
+                            <td><?= $datos->numPaginas?></td>
                             <td>
                                 <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                                 <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
