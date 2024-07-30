@@ -15,12 +15,25 @@
 </head>
 
 <body>
+    <script>
+        function eliminar(){
+        var respuesta=confirm("¿Seguro que deseas eliminar?");
+        return respuesta
+    }
+    </script>
     <h1 class="text-center p-3">Hola mundo</h1>
+
+    <?php
+    include "modelo/conexion.php";
+    include "controlador/eliminar_libro.php";
+    
+    
+    ?>
     <div class="cpntainer-fluid row">
         <form class="col-4 p-3" method="POST">
             <h3 class="text-center text-success">Registro de libros</h3>
             <?php
-                    include "modelo/conexion.php";
+                    
                     include "controlador/registro_libro.php";
                         ?>
             <div class="mb-3">
@@ -85,7 +98,7 @@
                             <td><?= $datos->genero?></td>
                             <td>
                                 <a href="modificar_libro.php?ID=<?=$datos->IDLIBRO?>" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
-                                <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                                <a onclick="return eliminar()"  href="index.php?idBorrar=<?=$datos->IDLIBRO?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
                     <?php }

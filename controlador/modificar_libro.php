@@ -20,10 +20,10 @@ if(!empty($_POST["botonModificar"])){
         header("location:index.php");
 
     }
-    else{echo "<div class='alert alert-danger'>Error al modificar</div>";}
+    else{echo '<div class="alert alert-danger">Error al modificar</div>';}
 }
 
-else{ echo "<div class='alert alert-warning'>Campos vacios</div>";}
+else{ echo '<div class="alert alert-warning">Campos vacios</div>';}
 
 }
 
