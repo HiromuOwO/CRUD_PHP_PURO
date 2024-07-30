@@ -17,27 +17,38 @@
 <body>
     <h1 class="text-center p-3">Hola mundo</h1>
     <div class="cpntainer-fluid row">
-        <form class="col-4 p-3">
-            <h3 class="text-center text-success">Registro de personas</h3>
+        <form class="col-4 p-3" method="POST">
+            <h3 class="text-center text-success">Registro de libros</h3>
+            <?php
+                    include "modelo/conexion.php";
+                    include "controlador/registro_libro.php";
+                        ?>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nombre de la persona</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="nombre">
+                <label for="exampleInputEmail1" class="form-label">Titulo del libro</label>
+                <input type="text" class="form-control"  name="titulo">
 
-                <label for="exampleInputEmail1" class="form-label">Apellidos</label>
-                <input type="tex" class="form-control" id="exampleInputEmail1" name="apellidos">
+                <label for="exampleInputEmail1" class="form-label">Autor</label>
+                <input type="tex" class="form-control"  name="autor">
 
-                <label for="exampleInputEmail1" class="form-label">DNI</label>
-                <input type="tex" class="form-control" id="exampleInputEmail1" name="dni">
+                <label for="exampleInputEmail1" class="form-label">Editoial</label>
+                <input type="tex" class="form-control"  name="editorial">
 
-                <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="exampleInputEmail1" name="fechaNacimiento">
+                <label for="exampleInputEmail1" class="form-label">Año</label>
+                <input type="number"  class="form-control" name="año">
 
-                <label for="exampleInputEmail1" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="correo">
+                <label for="exampleInputEmail1" class="form-label">Numero de paginas</label>
+                <input type="number" class="form-control"  name="numPaginas">
+
+                <label for="exampleInputEmail1" class="form-label">Edicion</label>
+                <input type="text"  class="form-control" name="edicion">
+
+                <label for="exampleInputEmail1" class="form-label">Genero</label>
+                <input type="text" class="form-control"  name="genero">
+
 
             </div>
 
-            <button type="submit" class="btn btn-primary" value=ok>Registrar</button>
+            <button type="submit" class="btn btn-primary" name="botonRegistrar" value=ok>Registrar</button>
         </form>
 
         <div class="col 8 p-4">
@@ -50,14 +61,16 @@
                         <th scope="col">Autor</th>
                         <th scope="col">Editorial</th>
                         <th scope="col">Año</th>
-                        <th scope="col">Numero de Paginas</th>
+                        <th scope="col">No.Pag.</th>
+                        <th scope="col">Edicion</th>
+                        <th scope="col">Genero</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     include "modelo/conexion.php";
-                    $sql = $conexion->query("select * from persona");
+                    $sql = $conexion->query("select * from libro");
                     while ($datos = $sql->fetch_object()) {
                         ?>
                         <tr>
@@ -67,7 +80,9 @@
                             <td><?= $datos->autor ?></td>
                             <td><?= $datos->editorial?></td>
                             <td><?= $datos->año ?></td>
-                            <td><?= $datos->numPaginas?></td>
+                            <td><?= $datos->numPaginas?>p</td>
+                            <td><?= $datos->edicion?></td>
+                            <td><?= $datos->genero?></td>
                             <td>
                                 <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                                 <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
