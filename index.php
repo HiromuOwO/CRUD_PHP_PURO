@@ -84,7 +84,7 @@
                             <td><?= $datos->edicion?></td>
                             <td><?= $datos->genero?></td>
                             <td>
-                                <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
+                                <a href="modificar_libro.php?ID=<?=$datos->IDLIBRO?>" class="btn btn-small btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                                 <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
